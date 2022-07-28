@@ -78,16 +78,6 @@ def pokemon():
             y_n = input("Would you like to save your score, y/n?")
             if y_n == "y":
                 save_scores()
-                # save_name = input('What is your name? ').title()
-                # save_score = player_score
-                # text_file = open("highscores.txt", "a")
-                # text_file.write(str(save_name) + ' has a score of ' + str(save_score) + "\n")
-                # text_file.close()
-                # print("\n")
-                # text_file = open("highscores.txt", "r")
-                # whole_thing = text_file.read()
-                # print(whole_thing)
-                # text_file.close()
         elif computer_score > player_score:
             print(f" Game over. Uh oh, you got beaten by a computer. The computer scored {computer_score}, "
                   f"and you only got {player_score} :(")
