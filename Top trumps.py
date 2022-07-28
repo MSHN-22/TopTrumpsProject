@@ -17,7 +17,7 @@ def random_pokemon():
 
 
 def pokemon():
-    game = 5  # The number of rounds to play
+    game = 1  # The number of rounds to play
     player_score = 0
     computer_score = 0
     while game > 0:
@@ -75,6 +75,19 @@ def pokemon():
         if player_score > computer_score:
             print(f"Game over. Congratulations, you beat the computer! Your score was {player_score}, "
                   f"the computer only scored {computer_score}!")
+            y_n = input("Would you like to save your score, y/n?")
+            if y_n == "y":
+                save_name = input('What is your name? ').title()
+                save_score = player_score
+                text_file = open("highscores.txt", "a")
+                text_file.write(str(save_name) + ' has a score of ' + str(save_score) + "\n")
+                text_file.close()
+
+                print("\n")
+                text_file = open("highscores.txt", "r")
+                whole_thing = text_file.read()
+                print(whole_thing)
+                text_file.close()
         elif computer_score > player_score:
             print(f" Game over. Uh oh, you got beaten by a computer. The computer scored {computer_score}, "
                   f"and you only got {player_score} :(")
@@ -97,7 +110,7 @@ def random_planet():
 
 
 def star_wars():
-    game = 5  # The number of rounds to play
+    game = 1  # The number of rounds to play
     player_score = 0
     computer_score = 0
     while game > 0:
@@ -155,11 +168,37 @@ def star_wars():
         if player_score > computer_score:
             print(f"Game over. Congratulations, you beat the computer! Your score was {player_score}, "
                   f"the computer only scored {computer_score}!")
+            y_n = input("Would you like to save your score, y/n? ")
+            if y_n == "y":
+                save_name = input('Hi, what is your name? ').title()
+                save_score = player_score
+                text_file = open("highscores.txt", "a")
+                text_file.write(save_name + ' has a score of ' + str(save_score) + "\n")
+                text_file.close()
+                print("\n")
+                text_file = open("highscores.txt", "r")
+                whole_thing = text_file.read()
+                print(whole_thing)
+                text_file.close()
         elif computer_score > player_score:
             print(f" Game over. Uh oh, you got beaten by a computer. The computer scored {computer_score}, "
                   f"and you only got {player_score} :(")
         elif player_score == computer_score:
             print("Game over, It's a draw!")
+
+# def save_scores():
+#     save_name = input('Hi, what is your name? ').title()
+#     save_score = player_score
+#
+#     text_file = open("highscores.txt", "a")
+#     text_file.write(save_name + ' has a score of ' + str(save_score) + "\n")
+#     text_file.close()
+#
+#     print("\n")
+#     text_file = open("highscores.txt", "r")
+#     whole_thing = text_file.read()
+#     print(whole_thing)
+#     text_file.close()
 
 
 def run():
