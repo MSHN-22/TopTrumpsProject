@@ -17,7 +17,7 @@ def random_pokemon():
 
 
 def pokemon():
-    game = 1  # The number of rounds to play
+    game = 3  # The number of rounds to play
     player_score = 0
     computer_score = 0
     while game > 0:
@@ -46,7 +46,7 @@ def pokemon():
             stat = random.choice(possible_stats)
             print(f"The computer chose to play {stat}")
         else:  # for odd rounds the player chooses the stat to play
-            stat = str(input("Which stat would you like to use, height, weight or experience? "))
+            stat = str(input("Which stat would you like to use, height, weight or experience? ")).lower()
             if stat not in possible_stats:  # Checks whether stat is inputted correctly
                 print("Uh oh, you must chose height, weight or experience.")
                 break
@@ -100,7 +100,7 @@ def random_planet():
 
 
 def star_wars():
-    game = 1  # The number of rounds to play
+    game = 3  # The number of rounds to play
     player_score = 0
     computer_score = 0
     while game > 0:
@@ -129,7 +129,7 @@ def star_wars():
             stat = random.choice(possible_stats)
             print(f"The computer chose to play {stat}")
         else:  # for odd rounds the player chooses the stat to play
-            stat = str(input("Which stat would you like to play, diameter, population, or orbital_period? "))
+            stat = str(input("Which stat would you like to play, diameter, population, or orbital_period? ")).lower()
             if stat not in possible_stats:  # Checks whether stat is inputted correctly
                 print("Uh oh, you must chose height, weight or experience.")
                 break
@@ -143,14 +143,14 @@ def star_wars():
                   f"more round(s) to play.")
         elif player_num < computer_num:
             print("Sorry, you lose :(")
-            print(f"The computer's pokemon was: {computer_planet}")
+            print(f"The computer's planet was: {computer_planet}")
             computer_score += 1
             game = game - 1
             print(f"Your score is: {player_score}, the computer's score is: {computer_score}. You have {game} "
                   f"more round(s) to play.")
         else:
             print("You draw!")
-            print(f"The computer's pokemon was: {computer_planet}")
+            print(f"The computer's planet was: {computer_planet}")
             game = game - 1
             print(f"Your score is: {player_score}, the computer's score is: {computer_score}. You have {game} "
                   f"more round(s) to play.")
@@ -179,10 +179,9 @@ def save_scores():
     print(whole_thing)
     text_file.close()
 
-
 def run():
     game_choice = input("Welcome to Top Trumps! Would you like to play Pokemon Top Trumps or Star Wars "
-                        "Planets Top Trumps? ")
+                        "Planets Top Trumps? ").lower()
     choices = ["pokemon", "star wars planets"]
     if game_choice not in choices:
         print("You must choose 'pokemon' or 'star wars planets'.")
