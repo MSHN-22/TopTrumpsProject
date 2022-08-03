@@ -135,7 +135,9 @@ def star_wars():
                 break
         player_num = player_planet[stat]
         computer_num = computer_planet[stat]
-        if player_num > computer_num:
+        if player_num == "unknown":
+            print("Unfortunately, that stat is unknown, new planets to explore coming up :)")
+        elif player_num > computer_num:
             print("Yay, you win!")
             player_score += 1
             game = game - 1  # keeps track of number of rounds played
